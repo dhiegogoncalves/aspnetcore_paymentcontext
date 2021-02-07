@@ -1,5 +1,6 @@
 using Flunt.Validations;
 using PaymentContext.Domain.Enums;
+using PaymentContext.Domain.Utils;
 using PaymentContext.Shared.ValueObjects;
 
 namespace PaymentContext.Domain.ValueObjects
@@ -22,10 +23,10 @@ namespace PaymentContext.Domain.ValueObjects
 
         private bool Validate()
         {
-            if (Type == EDocumentType.CNPJ && Number.Length == 14)
+            if (Type == EDocumentType.CNPJ && CpfCnpjUtils.CnpjIsValid(Number))
                 return true;
 
-            if (Type == EDocumentType.CPF && Number.Length == 11)
+            if (Type == EDocumentType.CPF && CpfCnpjUtils.CpfIsValid(Number))
                 return true;
 
             return false;

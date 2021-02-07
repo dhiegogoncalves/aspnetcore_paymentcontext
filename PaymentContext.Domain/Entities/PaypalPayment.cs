@@ -3,10 +3,10 @@ using PaymentContext.Domain.ValueObjects;
 
 namespace PaymentContext.Domain.Entities
 {
-    public class PaypalPayment : Payment
+    public class PayPalPayment : Payment
 
     {
-        public PaypalPayment(
+        public PayPalPayment(
             string transactionCode,
             DateTime paidDate,
             DateTime expireDate,
